@@ -150,7 +150,7 @@ nav ul li a:hover {
 
 .photo-section {
     flex: 1;
-    background: url('../images/register.jpeg') no-repeat center center;
+    background: url('../images/login.jpeg') no-repeat center center;
     background-size: cover;
     height: 70vh;
     border-radius: 10px;
@@ -163,8 +163,8 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 15px;
-    font-size: 14px;
     margin-top: 40px;
+    font-size: 14px;
     position: relative;
     z-index: 1;
     color: white;

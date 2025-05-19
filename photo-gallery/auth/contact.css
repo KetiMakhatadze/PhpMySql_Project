@@ -14,10 +14,9 @@ body::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.716);
+    background-color: rgba(0, 0, 0, 0.59);
     z-index: 1;
 }
-
 header {
     position: relative;
     background-color: transparent;
@@ -86,11 +85,12 @@ nav ul li a:hover {
 .form-section p {
     margin-top: 0;
     font-size: 14px;
-    color: #dddddd;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
-.form-section input {
+.form-section input,
+.form-section textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -98,18 +98,24 @@ nav ul li a:hover {
     border-radius: 5px;
     font-size: 14px;
     outline: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(255, 255, 255, 0.252);
+    color: rgb(255, 255, 255);
 }
 
-.form-section input::placeholder {
+.form-section textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-section input::placeholder,
+.form-section textarea::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
 .form-section button {
-    width: 105%;
+    width: 102%;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.433);
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -129,8 +135,14 @@ nav ul li a:hover {
     font-size: 12px;
 }
 
+.success {
+    color: #4caf50;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
 .signin-link {
-    color: #dddddd;
+    color: #ffffff;
     text-decoration: none;
     font-size: 13px;
     margin-top: 20px;
@@ -148,24 +160,12 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.photo-section {
-    flex: 1;
-    background: url('../images/register.jpeg') no-repeat center center;
-    background-size: cover;
-    height: 70vh;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
-                0 4px 6px rgba(0, 0, 0, 0.2);
-    margin: 40px;
-}
-
 footer {
     text-align: center;
     padding: 15px;
-    font-size: 14px;
     margin-top: 40px;
+    font-size: 14px;
     position: relative;
     z-index: 1;
-    color: white;
+    color: rgb(255, 255, 255);
 }
