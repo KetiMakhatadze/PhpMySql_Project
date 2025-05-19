@@ -1,4 +1,4 @@
- body {
+body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
     z-index: 1;
 }
 
@@ -29,22 +29,73 @@ header {
 header h1 {
     margin: 0;
     font-size: 32px;
-    color: #000000;
+    color: #fffdfd;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8); 
 }
 
-.welcome {
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
     position: relative;
     z-index: 1;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), /* Glowing effect */
+                0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), /* Enhanced glow on hover */
+                0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 325px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Darker background for text area */
+    color: #fff; /* White text for contrast */
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer {
     text-align: center;
-    margin-top: 80px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    border-radius: 12px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #000;
+    padding: 15px;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    font-size: 14px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.logout {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    z-index: 1;
 }
 
 a {
@@ -59,12 +110,4 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-.logout {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #ffffff;
-    z-index: 1;
 }
