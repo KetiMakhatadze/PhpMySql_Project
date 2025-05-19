@@ -18,6 +18,19 @@ $role = $loggedIn ? $_SESSION['role'] : '';
 
 <header>
     <h1>Photo Gallery</h1>
+    <nav>
+        <ul>
+            <?php if ($loggedIn): ?>
+                <li><span>მოგესალმები, <?= htmlspecialchars($username) ?> (<?= htmlspecialchars($role) ?>)</span></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="auth/logout.php">Log out</a></li>
+            <?php else: ?>
+                <li><a href="auth/register.php">Register</a></li>
+                <li><a href="auth/login.php">Log in</a></li>
+                <li><a href="auth/contact.php">Contact</a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
 </header>
 <div class="gallery-grid">
     <!-- ქარდი 1 -->
@@ -94,22 +107,8 @@ $role = $loggedIn ? $_SESSION['role'] : '';
 </div>
 
 <footer>
-    <?php echo date("Y"); ?> Photo Gallery — შექმნილია სიყვარულით ქეთოს მიერ
+    <?php echo date("Y"); ?> Photo Gallery — Made with love by Keto
 </footer>
-
-<?php if ($loggedIn): ?>
-    <div class="logout">
-        <span>მოგესალმები, <?= htmlspecialchars($username) ?> (<?= htmlspecialchars($role) ?>)</span> |
-        <a href="contact.php">კონტაქტი</a> |
-        <a href="auth/logout.php">გასვლა</a>
-    </div>
-<?php else: ?>
-    <div class="logout">
-        <a href="auth/login.php">შესვლა</a> | 
-        <a href="auth/register.php">რეგისტრაცია</a> | 
-        <a href="auth/contact.php">კონტაქტი</a>
-    </div>
-<?php endif; ?>
 
 </body>
 </html>

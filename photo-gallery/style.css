@@ -14,7 +14,7 @@ body::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
@@ -22,7 +22,9 @@ header {
     position: relative;
     background-color: transparent;
     padding: 20px;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1;
 }
 
@@ -31,6 +33,28 @@ header h1 {
     font-size: 32px;
     color: #fffdfd;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8); 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a, nav ul li span {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 .gallery-grid {
@@ -43,17 +67,17 @@ header h1 {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), /* Glowing effect */
-                0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+                0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.03); /* Slight zoom on hover */
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), /* Enhanced glow on hover */
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8),
                 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -65,8 +89,8 @@ header h1 {
 
 .card-content {
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5); /* Darker background for text area */
-    color: #fff; /* White text for contrast */
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
 }
 
 .card-content h3 {
@@ -82,32 +106,9 @@ header h1 {
 footer {
     text-align: center;
     padding: 15px;
-    /* background-color: rgba(255, 255, 255, 0.7); */
     font-size: 14px;
     margin-top: 40px;
     position: relative;
     z-index: 1;
     color: white;
-}
-
-.logout {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #ffffff;
-    z-index: 1;
-}
-
-a {
-    display: inline-block;
-    margin: 10px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    z-index: 1;
-}
-
-a:hover {
-    text-decoration: underline;
 }
