@@ -5,6 +5,12 @@
     $loggedIn = isset($_SESSION['user_id']);
     $username = $loggedIn ? $_SESSION['username'] : '';
     $role = $loggedIn ? $_SESSION['role'] : '';
+
+    $query = "SELECT photos.*, categories.name AS category_name 
+              FROM photos 
+              LEFT JOIN categories ON photos.category_id = categories.id 
+              ORDER BY photos.created_at DESC";
+    $result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -32,77 +38,19 @@
         </nav>
     </header>
     <div class="gallery-grid">
-        <!-- ქარდი 1 -->
-        <div class="card">
-            <img src="images/Photo1.avif" alt="Mountains">
-            <div class="card-content">
-                <h3>Mountains</h3>
-                <p>Beautiful mountain range photo</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 2 -->
-        <div class="card">
-            <img src="images/Photo2.jpeg" alt="City Lights">
-            <div class="card-content">
-                <h3>City Lights</h3>
-                <p>Night view of a bustling city</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 3 -->
-        <div class="card">
-            <img src="images/Photo3.jpg" alt="Desert">
-            <div class="card-content">
-                <h3>Desert</h3>
-                <p>Sandy dunes and desert vibes</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 4 -->
-        <div class="card">
-            <img src="images/Photo4.jpg" alt="Ocean">
-            <div class="card-content">
-                <h3>Ocean</h3>
-                <p>Deep blue ocean view</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 5 -->
-        <div class="card">
-            <img src="images/Photo5.jpeg" alt="Nature">
-            <div class="card-content">
-                <h3>Nature</h3>
-                <p>Green forest and wildlife</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 6 -->
-        <div class="card">
-            <img src="images/Photo6.jpg" alt="Sunset">
-            <div class="card-content">
-                <h3>Sunset</h3>
-                <p>Colorful sky at sunset</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 7 -->
-        <div class="card">
-            <img src="images/Photo7.jpeg" alt="Travel">
-            <div class="card-content">
-                <h3>Architecture</h3>
-                <p>Iconic urban architecture</p>
-            </div>
-        </div>
-
-        <!-- ქარდი 8 -->
-        <div class="card">
-            <img src="images/Photo8.jpeg" alt="Wildlife">
-            <div class="card-content">
-                <h3>Wildlife</h3>
-                <p>Animals in their natural habitat</p>
-            </div>
-        </div>
+        <?php if (mysqli_num_rows($result) > 0): ?>
+            <?php while ($photo = mysqli_fetch_assoc($result)): ?>
+                <div class="card">
+                    <img src="<?= htmlspecialchars($photo['image_path']) ?>" alt="<?= htmlspecialchars($photo['title']) ?>">
+                    <div class="card-content">
+                        <h3><?= htmlspecialchars($photo['title']) ?></h3>
+                        <p><?= htmlspecialchars($photo['description']) ?></p>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p>No photos found in the gallery.</p>
+        <?php endif; ?>
     </div>
 
     <footer>
@@ -110,3 +58,7 @@
     </footer>
 </body>
 </html>
+
+<?php
+    mysqli_close($conn);
+?>

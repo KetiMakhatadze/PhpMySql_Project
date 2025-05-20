@@ -2,9 +2,8 @@
 session_start();
 require_once '../includes/db.php';
 
-// თუ მომხმარებელი უკვე დალოგინებულია, გადავამისამართოთ Home გვერდზე
 if (isset($_SESSION['user_id'])) {
-    header("Location: ../index.php"); // ან home.php, თუ Home გვერდი სხვა ფაილია
+    header("Location: ../index.php");
     exit;
 }
 
