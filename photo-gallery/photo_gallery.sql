@@ -78,20 +78,6 @@ CREATE TABLE `contacts` (
 -- Dumping data for table `contacts`
 --
 
-INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `created_at`) VALUES
-(1, 'K', 'k@gmail.com', 'jsbdh vjdkjsnaiojdwuewjdns', '2025-05-21 13:11:21'),
-(2, 'K', 'k@gmail.com', 'jsbdh vjdkjsnaiojdwuewjdns', '2025-05-21 13:13:12'),
-(3, 'K', 'k@gmail.com', 'jsbdh vjdkjsnaiojdwuewjdns', '2025-05-21 13:13:13'),
-(4, 'K', 'k@gmail.com', 'jsbdh vjdkjsnaiojdwuewjdns', '2025-05-21 13:13:21'),
-(5, 'k', 'k@gmail.com', 'bubovbobvobd', '2025-05-21 13:13:31'),
-(6, 'k', 'k@gmail.com', 'bubovbobvobd', '2025-05-21 13:15:06'),
-(7, 'keto', 'keto@gmail.com', 'knoia', '2025-05-21 13:19:09'),
-(8, 'keto', 'keto@gmail.com', 'knoia', '2025-05-21 13:19:22'),
-(9, 'keto', 'keto@gmail.com', 'knoia', '2025-05-21 13:19:25'),
-(10, 'keto', 'keto@gmail.com', 'nsnvsid', '2025-05-21 13:20:11'),
-(11, 'keto', 'keto@gmail.com', 'nsnvsid', '2025-05-21 13:21:21'),
-(12, 'keto', 'keto@gmail.com', 'nsnvsid', '2025-05-21 13:21:34');
-
 -- --------------------------------------------------------
 
 --
@@ -140,14 +126,6 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `is_admin`) VALUES
-(1, 'sacsasc', 'asc@gn.c', '$2y$10$TPQjxNJ2YIeMqz63pqA0C.tJiT7o77dxlPC4OGMyWWZ1zp8VumdYW', 'user', 0),
-(3, 'Keto', 'keti@gmail.com', '$2y$10$AAruOa/i.MTBOWWC8lq7P.u6HCHBN7.1TKUnnM2vtUI9XZ0KqHWhy', 'admin', 1),
-(4, 'k', 'k@gmail.com', '$2y$10$/Ope/jrnJkPRVKpDV6aDIOrpUx/F.CJY6MFPk.9n7Tmr91R94htMK', 'user', 0),
-(5, 'kk', 'kk@gmail.com', '$2y$10$VckPKuMYWNF/G./c4AtuKOO7qvUEi1f8hr./gjF2w3R2UYaeBjFSG', 'user', 0),
-(6, 'Keto', 'keto@gmail.com', '$2y$10$Bc1.BK/NsHQqhSxjabWk4O8CkM7CWNfgr/wD8rtB7O1.RjISfQIv6', 'user', 0);
-
 --
 -- Indexes for dumped tables
 --
