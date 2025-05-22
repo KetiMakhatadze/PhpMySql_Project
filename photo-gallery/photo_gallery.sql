@@ -88,15 +88,15 @@ CREATE TABLE `contacts` (
 -- Table structure for table `photos`
 --
 
-CREATE TABLE `photos` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text DEFAULT NULL,
-  `image_path` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CREATE TABLE `photos` (
+    `id` int(11) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `category_id` int(11) DEFAULT NULL,
+    `title` varchar(255) NOT NULL,
+    `description` text DEFAULT NULL,
+    `image_path` varchar(255) NOT NULL,
+    `created_at` datetime DEFAULT current_timestamp()
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `photos`
