@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $identifier = trim($_POST['identifier']);
     $password = $_POST['password'];
 
-    $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";
+    $sql = "SELECT id, username, password, role, is_admin FROM users WHERE username = ? OR email = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "ss", $identifier, $identifier);
     mysqli_stmt_execute($stmt);
@@ -21,6 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
+            $_SESSION['is_admin'] = $user['is_admin'];
             header("Location: ../index.php");
             exit;
         } else {

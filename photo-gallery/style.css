@@ -135,7 +135,6 @@ nav ul li a:hover {
 }
 
 .detail-content {
-    /* width: 90%; */
     padding: 10px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -145,10 +144,6 @@ nav ul li a:hover {
 .detail-content input[type="text"],
 .detail-content textarea {
     width: 100%;
-    /* margin: 10px 0; */
-    /* padding: 10px; */
-    /* border-radius: 5px; */
-    /* border: none; */
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
@@ -201,6 +196,60 @@ nav ul li a:hover {
     padding: 10px;
     background: rgba(240, 240, 240, 0.1);
     border-radius: 5px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-form {
+    margin-top: 10px;
+}
+.edit-form textarea {
+    width: 80%;
+    min-height: 50px;
+    margin-right: 10px;
+}
+.edit-form button {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-form button:hover {
+    background: #777;
+}
+
+.cancel-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ccc;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cancel-button:hover {
+    background: #bbb;
+}
+
+.comment a, .comment button {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: #555;
+    border-radius: 5px;
+}
+
+.comment a:hover, .comment button:hover {
+    background: #777;
 }
 
 footer {
